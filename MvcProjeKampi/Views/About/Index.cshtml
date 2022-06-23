@@ -1,0 +1,42 @@
+﻿@using EntitiyLayer.Concreate
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{string buttonStatus = "";}
+@{string buttonText = "";}
+
+
+
+<br />
+<div style="width:1200px;margin:auto;height:100%">
+    <h2>Hakkımda Veri Listesi</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Hakkımda Başlığı</th>
+            <th>İşlemler</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.AboutStatus == true)
+            {
+                buttonText = "Pasif Yap";
+                buttonStatus = "btn btn-danger";
+            }
+            else
+            {
+                buttonText = "Aktif Yap";
+                buttonStatus = "btn btn-success";
+            }
+            <tr>
+                <td>@item.AboutID</td>
+                <td>Başlık</td>
+                <td><a href="/About/AboutActiveOrPassive/@item.AboutID" class="@buttonStatus">@buttonText</a></td>
+            </tr>
+        }
+    </table>
+    @Html.Action("AboutPartial", "About")
+</div>

@@ -1,0 +1,46 @@
+﻿@model EntitiyLayer.Concreate.Writer
+@{
+    ViewBag.Title = "EditWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="width:1200px;margin:auto;height:100%">
+    <br />
+    <h2>Yazar Düzenleme Sayfası</h2>
+    @using (Html.BeginForm("EditWriter", "Writer", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.HiddenFor(m => m.WriterID, new { @class = "form-control" })
+            <br />
+            @Html.Label("Yazar Adı")
+            @Html.TextBoxFor(m => m.WriterName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.WriterName, "", new { @style = "color:red" })
+            <br />
+            @Html.Label("Yazar Soyadı")
+            @Html.TextBoxFor(m => m.WriterSurname, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.WriterSurname)
+            <br />
+            @Html.Label("Yazar Mail")
+            @Html.TextBoxFor(m => m.WriterMail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.WriterMail)
+            <br />
+            @Html.Label("Yazar Şifre")
+            @Html.TextBoxFor(m => m.WriterPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.WriterPassword)
+            <br />
+            @Html.Label("Yazar Görsel Linki")
+            @Html.TextBoxFor(m => m.WriterImage, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.WriterImage)
+            <br />
+            @Html.Label("Yazar Unvan")
+            @Html.TextBoxFor(m => m.WriterTitle, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.WriterTitle)
+            <br />
+            @Html.Label("Yazar Hakkında")
+            @Html.TextBoxFor(m => m.WriterAbout, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.WriterAbout)
+            <br />
+            <a href="/Writer/Index/" class="btn btn-danger">Geri Dön</a>
+            <button class="btn btn-success">Yazar Güncelle</button>
+        </div>
+    }
+</div>

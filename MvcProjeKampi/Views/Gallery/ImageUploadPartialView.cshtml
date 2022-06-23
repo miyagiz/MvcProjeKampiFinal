@@ -1,0 +1,24 @@
+﻿@model EntitiyLayer.Concreate.ImageFile
+
+@using (Html.BeginForm("UploadImage", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="card card-primary">
+        <div class="card-header">
+            <div class="card-title">
+                Resim Yükle
+            </div>
+        </div>
+        <div class="card-body">
+            <div>
+                @Html.Label("Resim Açıklama")
+                <br />
+                @Html.TextBoxFor(x => x.ImageName, new { @class = "form-control"})
+                <br />
+                <input type="file" name="ImagePath" />
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Resmi Yükle</button>
+
+}
+

@@ -1,0 +1,39 @@
+﻿@using EntitiyLayer.Concreate
+@model List<SkillCard>
+
+@{
+    ViewBag.Title = "AllSkillCards";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<div style="width:1200px;margin:auto;height:100%">
+    <h1>Yetenek Kartı Listesi</h1>
+    <a href="/SkillCard/AddSkillCard" class="btn btn-primary">Yeni Yetenek Kartı Ekle</a>
+    <br />
+    <br />
+    <br />
+    <table class="table table-bordered" style="text-align:center">
+        <tr>
+            <th style="text-align:center">#</th>
+            <th style="text-align:center">Ad</th>
+            <th style="text-align:center">Soyad</th>
+            <th style="text-align:center">Okul Adı</th>
+            <th style="text-align:center"></th>
+            <th style="text-align:center"></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.SkillCardID</th>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.SchoolName</td>
+                <td><a href="/SkillCard/EditSkillCard/@item.SkillCardID" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/SkillCard/Index/@item.SkillCardID" class="btn btn-info">Yetenek Kartı Sayfası</a></td>
+            </tr>
+        }
+    </table>
+</div>
+

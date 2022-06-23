@@ -1,0 +1,33 @@
+﻿@using EntitiyLayer.Concreate;
+@model List<Category>
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<div style="width:1200px;margin:auto;height:100%;margin-top:50px">
+    <table class="table table-bordered" style="text-align:center">
+        <tr>
+            <th style="text-align:center">Kategori ID</th>
+            <th style="text-align:center">Kategori Ad</th>
+            @*<th style="text-align:center">Kategori Açıklama</th>*@
+            <th style="text-align:center">Kategori Durum</th>
+            <th style="text-align:center">Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                @*<td>@item.CategoryDescription</td>*@
+                <td>@item.CategoryStatus</td>
+                <td><button class="btn btn-success">Güncelle</button></td>
+            </tr>
+        }
+    </table>
+    <a href="/Category/AddCategory" class="btn btn-primary">Yeni Kategori Ekle</a>
+</div>
+
+@*Ders 23 Başlanmadı*@

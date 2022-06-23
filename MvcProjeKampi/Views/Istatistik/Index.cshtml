@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<div style="width:1200px;margin:auto;height:100%">
+    <h2>İstatistik Sayfası</h2>
+    <div style="width:300px;height:150px;display:block;float:left;background-color:#ff6a00">
+        <h3 style="text-align:center">Toplam kategori sayısı :</h3>
+        <br />
+        <h1 style="text-align:center">@Html.ViewBag.countOfCategory</h1>
+    </div>
+    <div style="width:300px;height:150px;float:left;margin-left:50px;background-color:#808080">
+        <h5 style="text-align:center">Başlık tablosunda "yazılım" kategorisine ait başlık sayısı :</h5>
+        <br />
+        <h1 style="text-align:center">@Html.ViewBag.countHeading</h1>
+    </div>
+    <div style="width:300px;height:150px;float:left;margin-left:50px;background-color:#b6ff00">
+        <label style="text-align:center">Yazar adında 'a' harfi geçen yazar sayısı :</label>
+        <br />
+        <h1 style="text-align:center">@Html.ViewBag.countWriter</h1>
+    </div>
+    <div style="width: 300px; height: 150px; float: left; margin-top: 50px; margin-left: 200px;background-color:#00ffff">
+        <label style="text-align:center">En fazla başlığa sahip kategori adı :</label>
+        <br />
+        <h1 style="text-align:center">@Html.ViewBag.categoryName</h1>
+    </div>
+    <div style="width:300px;height:150px;float:left;margin-left:50px;margin-top:50px;background-color:#ff00dc">
+        <label style="text-align:center">Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark :</label>
+        <br />
+        <h1 style="text-align:center">@Html.ViewBag.difTrueFalseFromCategory</h1>
+    </div>
+
+</div>
+
+

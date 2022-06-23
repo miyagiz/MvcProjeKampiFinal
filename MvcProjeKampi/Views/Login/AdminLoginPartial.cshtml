@@ -1,0 +1,29 @@
+﻿@model EntitiyLayer.Concreate.Admin
+
+@using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+{
+    <div class="login px-4 mx-auto mw-100">
+        <h5 class="text-center mb-4">Admin Girişi</h5>
+        <form action="#" method="post">
+            <div style="text-align:center">
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Admin Kullanıcı Adı</label>
+                @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control", @id = "exampleInputEmail1" })
+                @*<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">*@
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Şifre</label>
+                @Html.TextBoxFor(x => x.AdminPassword, new { @class = "form-control", @type = "password", @id = "exampleInputPassword1" })
+                @*<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">*@
+            </div>
+            <div class="form-check mb-2">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Beni Hatırla</label>
+            </div>
+            <div style="text-align:center">
+                <button type="submit" class="btn btn-primary submit mb-4">Giriş Yap</button>
+            </div>
+        </form>
+    </div>
+}

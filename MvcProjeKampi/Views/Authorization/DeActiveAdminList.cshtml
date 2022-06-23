@@ -1,0 +1,36 @@
+﻿@using EntitiyLayer.Concreate
+@model List<Admin>
+
+@{
+    ViewBag.Title = "DeActiveAdminList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<div style="width:1200px;margin:auto;height:100%">
+    <h2>Admin Listesi</h2>
+    <a href="/Authorization/Index/" class="btn btn-danger">Geri Dön</a>
+    <br />
+    <br />
+    <table class="table table-bordered" style="text-align:center">
+        <tr>
+            <th style="text-align:center">#</th>
+            <th style="text-align:center">Kullanıcı Adı</th>
+            <th style="text-align:center">Yetki</th>
+            <th style="text-align:center">Durum</th>
+            <th style="text-align:center">İşlemler</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.AdminID</th>
+                <td>@item.AdminUserName</td>
+                <td>@item.Role.RoleName</td>
+                <td>Pasif</td>
+                <td><a href="/Authorization/DoActiveAdminStatus/@item.AdminID" class="btn btn-success">Aktif Yap</a></td>
+            </tr>
+        }
+    </table>
+</div>
+

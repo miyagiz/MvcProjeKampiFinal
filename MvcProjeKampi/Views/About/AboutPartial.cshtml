@@ -1,0 +1,33 @@
+﻿<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Yeni Hakkımızda Yazı Girişi
+</button>
+
+@using (Html.BeginForm("AddAbout", "About", FormMethod.Post))
+{
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Hakkımızda Yazı Girişi</h2>
+                </div>
+                <form method="post" action="/About/AddAbout/">
+                    <div class="modal-body">
+                        @Html.Label("Hakkımda Metin 1")
+                        <input type="text" name="AboutDetails1" class="form-control" />
+                        <br />
+                        @Html.Label("Hakkımda Metin 2")
+                        <input type="text" name="AboutDetails2" class="form-control" />
+                        <br />
+                        @Html.Label("Hakkımda Görsel 1")
+                        <input type="text" name="AboutImage1" class="form-control" />
+                        <br />
+                        @Html.Label("Hakkımda Görsel 2")
+                        <input type="text" name="AboutImage2" class="form-control" />
+                        <br />
+                        <button class="btn btn-info">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,54 @@
+﻿@model EntitiyLayer.Concreate.Writer
+
+@using (Html.BeginForm("SignUpWriter", "Writer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="login px-4 mx-auto mw-100">
+        <h5 class="text-center mb-4">Yazar Kayıt OL</h5>
+        <form action="#" method="post">
+            <div style="text-align:center">
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Adı*</label>
+                @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                @*<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">*@
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Soyadı*</label>
+                @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
+                @*<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">*@
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Mail Adresi*</label>
+                @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control", @id = "exampleInputEmail1" })
+                @*<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">*@
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Şifre*</label>
+                @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control", @type = "password" })
+                @*<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">*@
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Hakkında*</label>
+                @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+                @*<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">*@
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Ünvan*</label>
+                @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+                @*<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">*@
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Fotoğraf*</label><br />
+                <input type="file" name="WriterImage" />
+                @*<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">*@
+            </div>
+            <div class="form-check mb-2">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Beni Hatırla</label>
+            </div>
+            <div style="text-align:center">
+                <button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button><br />
+            </div>
+        </form>
+    </div>
+}
